@@ -1,6 +1,13 @@
+const app_id = "33OpwxLFrlpIGDluvvUiu";
 
-// Otitrading Deriv connection
+function loginWithDeriv() {
+  const redirect = window.location.origin + "/dashboard.html";
 
-console.log("Otitrading is ready");
+  const url =
+    "https://oauth.deriv.com/oauth2/authorize?app_id=" +
+    app_id +
+    "&redirect_uri=" +
+    encodeURIComponent(redirect);
 
-// This will handle Deriv login connection later
+  window.location.href = url;
+}
