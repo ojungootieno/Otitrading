@@ -10,6 +10,7 @@ window.onload = function () {
     const url = window.location.href;
 
     if (url.includes("token=") || url.includes("code=")) {
-        alert("Login successful! Welcome to OTI Trading.");
+    localStorage.setItem("deriv_login", "true");
+    window.location.href = "dashboard.html";
     }
 };
