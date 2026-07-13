@@ -2,7 +2,7 @@ const app_id = "33OpwxLFrlpIGDluvvUiu";
 
 function loginWithDeriv() {
     window.location.href =
-        "https://oauth.deriv.com/oauth2/authorize?app_id=" + app_id;
+"https://oauth.deriv.com/oauth2/authorize?app_id=" + app_id + "&l=EN";
 }
 
 // Check if user returned from Deriv
