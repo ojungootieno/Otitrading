@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard - OTI Trading</title>
+<title>OTI Trading Dashboard</title>
 
 <style>
 body{
@@ -26,9 +27,14 @@ header{
     border-radius:10px;
     margin-bottom:20px;
 }
+.value{
+    color:#00d084;
+    font-size:22px;
+    font-weight:bold;
+}
 </style>
-</head>
 
+</head>
 <body>
 
 <header>
@@ -38,21 +44,37 @@ header{
 <div class="container">
 
 <div class="card">
-<h2>Welcome!</h2>
-<p>Your Deriv account will appear here after login.</p>
+<h2>Login Status</h2>
+<p id="status">Checking...</p>
 </div>
 
 <div class="card">
-<h2>Account Balance</h2>
-<p>$0.00</p>
-</div>
-
-<div class="card">
-<h2>Trading Statistics</h2>
-<p>No data yet.</p>
+<h2>Access Token</h2>
+<p id="token">Not available</p>
 </div>
 
 </div>
-<script src="script.js"></script>
+
+<script>
+
+const token = localStorage.getItem("deriv_token");
+
+if(token){
+
+document.getElementById("status").innerHTML =
+"<span class='value'>Logged in successfully ✅</span>";
+
+document.getElementById("token").textContent =
+token.substring(0,25)+"...";
+
+}else{
+
+document.getElementById("status").innerHTML =
+"<span style='color:red'>Not logged in</span>";
+
+}
+
+</script>
+
 </body>
 </html>
